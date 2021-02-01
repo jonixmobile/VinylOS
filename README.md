@@ -1,3 +1,3 @@
 # VinyleOS
 
-The host Machine nees GCC, Perl, ncurses and grub.
+The host Machine needs GCC, Perl, ncurses and grub.
