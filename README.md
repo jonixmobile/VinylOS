@@ -20,6 +20,7 @@ cd ..
 
 git clone --depth 1 https://git.busybox.net/busybox
 cd busybox
+
 make menuconfig
 
 #Settings - enable "Build static binary (no shared libs)"
@@ -48,9 +49,11 @@ make -j 4
 
 
 mkdir /boot-files/initramfs
+
 make CONFIG_PREFIX=/boot-files/initramfs install
 
 cd /boot-files/initramfs
+
 vi init
 
 ----------------
