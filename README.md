@@ -15,25 +15,35 @@ mkdir /boot-files
 cp arch/x86_64/boot/bzImage /boot-files
 
 cd ..
+
 #we are gpng to create busy-box
 
 git clone --depth 1 https://git.busybox.net/busybox
-
 cd busybox
 make menuconfig
 
 #Settings - enable "Build static binary (no shared libs)"
+
 #with kernel > 6.6 disable - Networking uilities - disable tc (8.3 kb) NEW
+
 make -j 4
 
 #Static linking against glibc, can't use --gc-sections
+
 #Trying libraries: crypt m resolv rt
+
 #Library crypt is not needed, excluding it
+
 #Library m is needed, can't exclude it (yet)
+
 #Library resolv is needed, can't exclude it (yet)
+
 #Library rt is not needed, excluding it
+
 #Library m is needed, can't exclude it (yet)
+
 #Library resolv is needed, can't exclude it (yet)
+
 #Final link with: m resolv
 
 
@@ -54,6 +64,7 @@ rm linuxrc
 chmod +x init
 
 find . | cpio -o -H newc > ../init.cpio
+
 #4936 blocks
 
 apt install syslinux
@@ -70,7 +81,6 @@ cd /boot-files
 
 cp bzImage init.cpio initramfs/image/
 umount initramfs/image
-
 
 
 docker cp id://boot-files/initramfs/boot .
