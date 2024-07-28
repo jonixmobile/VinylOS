@@ -14,6 +14,7 @@ make -j 4
 #bzImage is ready
 
 mkdir /boot-files
+
 cp arch/x86_64/boot/bzImage /boot-files
 
 cd ..
@@ -21,6 +22,7 @@ cd ..
 #we are gpng to create busy-box
 
 git clone --depth 1 https://git.busybox.net/busybox
+
 cd busybox
 
 make menuconfig
@@ -79,12 +81,17 @@ dd if=/dev/zero of=boot bs=1M count=50
 apt install dosfstools
 
 mkfs -t fat boot
+
 syslinux boot
+
 mkdir image
+
 mount boot image
+
 cd /boot-files
 
 cp bzImage init.cpio initramfs/image/
+
 umount initramfs/image
 
 
