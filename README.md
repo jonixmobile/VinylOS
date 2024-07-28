@@ -63,6 +63,8 @@ vi init
 ----------------
 #!/bin/sh
 
+echo "Welcome to my Linux!"
+
 /bin/sh
 ----------------
 
