@@ -31,7 +31,7 @@ make menuconfig
 
 #with kernel > 6.6 disable - Networking uilities - disable tc (8.3 kb) NEW
 
-# http://lists.busybox.net/pipermail/busybox-cvs/2024-January/041752.html
+#http://lists.busybox.net/pipermail/busybox-cvs/2024-January/041752.html
 
 make -j 4
 
