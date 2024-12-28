@@ -69,6 +69,8 @@ echo "Welcome to my Linux!"
 
 /bin/sh
 
+
+
 rm linuxrc
 
 chmod +x init
