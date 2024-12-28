@@ -68,7 +68,6 @@ vi init
 echo "Welcome to my Linux!"
 
 /bin/sh
-----------------
 
 rm linuxrc
 
